@@ -163,7 +163,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 export function LandingPage() {
   return (
     <main className="relative isolate overflow-hidden bg-[#07111f] text-white">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.28),_transparent_32%),radial-gradient(circle_at_top_right,_rgba(34,211,238,0.16),_transparent_24%),linear-gradient(180deg,_#09111d_0%,_#07111f_38%,_#050913_100%)]" />
+      <div className="absolute inset-0 -z-20" style={{background:"radial-gradient(circle_at_top_left,_rgba(59,130,246,0.28),_transparent_32%),radial-gradient(circle_at_top_right,_rgba(34,211,238,0.16),_transparent_24%),linear-gradient(180deg,_#09111d_0%,_#07111f_38%,_#050913_100%)"}} />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:88px_88px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.7),transparent_95%)]" />
       <div className="absolute left-1/2 top-24 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
 
@@ -448,7 +448,7 @@ export function LandingPage() {
         </section>
 
         <section id="matches" className="grid gap-8 py-20 lg:grid-cols-[1.05fr_0.95fr]">
-          <Card className="border border-white/10 bg-slate-950/70 py-0 backdrop-blur-xl">
+          <Card className="border border-white/10 px-6 py-10 shadow-[0_24px_80px_rgba(2,8,23,0.45)] py-0 backdrop-blur-xl" style={{background:"linear-gradient(135deg,rgba(56,189,248,0.16),rgba(15,23,42,0.82))"}}>
             <CardContent className="space-y-8 px-6 py-6 sm:px-8 sm:py-8">
               <div className="space-y-4">
                 <Badge
