@@ -9,6 +9,7 @@ import matchRoutes from "./modules/match/match.routes.js";
 import { env } from "./config/env.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import requestRoutes from "./modules/request/request.routes.js";
+import chatRoutes from "./modules/chat/chat.routes.js";
 
 
 const app = express();
@@ -32,6 +33,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/matches", matchRoutes);
 app.use("/api/requests", requestRoutes)
+app.use("/api/chat", chatRoutes);
 
 app.get("/api/health", (_req, res) => {
   res.status(200).json({

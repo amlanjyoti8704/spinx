@@ -1,5 +1,6 @@
 import { Request, RequestStatus } from "../../models/request.model.js";
 import { AppError } from "../../errors/AppError.js";
+import { Conversation } from "../../models/conversation.model.js";
 
 export class RequestService {
 
@@ -58,6 +59,19 @@ export class RequestService {
 
         request.status = RequestStatus.ACCEPTED;
         await request.save();
+
+        const exists = await Conversation.findOne({
+            participants: {
+                $all: [request.senderId, request.receiverId],
+            },
+        });
+
+        if (!exists) {
+            await Conversation.create({
+                participants: [request.senderId, request.receiverId],
+            });
+        }
+
         return request;
     }
 
