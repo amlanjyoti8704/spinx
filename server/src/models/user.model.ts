@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, { Schema, InferSchemaType } from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
     name: {
       type: String,
@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+      minlength: 8,
     },
 
     avatar: {
@@ -30,5 +31,7 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+export type UserDocument = InferSchemaType<typeof userSchema>;
 
 export const User = mongoose.model("User", userSchema);

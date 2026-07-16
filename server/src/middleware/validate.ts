@@ -13,6 +13,7 @@ export const validate =
     if (!result.success) {
       return res.status(400).json({
         success: false,
+        message: "Invalid request data",
         errors: result.error.flatten(),
       });
     }

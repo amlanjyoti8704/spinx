@@ -1,21 +1,18 @@
 import { z } from "zod";
 
 export const signupSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(3)
-    .max(50),
+  name: z.string().trim().min(3),
 
-  email: z
-    .string()
-    .trim()
-    .email(),
+  email: z.string().trim().email(),
 
-  password: z
-    .string()
-    .min(8)
-    .max(32),
+  password: z.string().min(8),
+});
+
+export const loginSchema = z.object({
+  email: z.string().email(),
+
+  password: z.string(),
 });
 
 export type SignupInput = z.infer<typeof signupSchema>;
+export type LoginInput = z.infer<typeof loginSchema>;

@@ -198,7 +198,7 @@ export function LandingPage() {
                 Explore demo
               </Link>
               <Link
-                href="#launch"
+                href="/signup"
                 className="inline-flex h-10 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-slate-950 transition hover:bg-sky-100"
               >
                 Get started
@@ -231,7 +231,7 @@ export function LandingPage() {
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
-                href="#launch"
+                href="/signup"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-cyan-300 px-6 text-sm font-semibold text-slate-950 shadow-[0_16px_40px_rgba(34,211,238,0.25)] transition hover:translate-y-[-1px]"
               >
                 Upload resume
@@ -597,8 +597,8 @@ export function LandingPage() {
             <Link href="#matches" className="transition hover:text-white">
               Matches
             </Link>
-            <Link href="#launch" className="transition hover:text-white">
-              Roadmap
+            <Link href="/signup" className="transition hover:text-white">
+              Get started
             </Link>
           </div>
         </footer>

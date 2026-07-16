@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors/AppError.js";
+import { env } from "../config/env.js";
 
 export function errorHandler(
   err: Error,
-  req: Request,
+  _req: Request,
   res: Response,
-  next: NextFunction
+  _next: NextFunction
 ) {
   if (err instanceof AppError) {
     return res.status(err.statusCode).json({
@@ -14,7 +15,9 @@ export function errorHandler(
     });
   }
 
-  console.error(err);
+  if (env.NODE_ENV !== "test") {
+    console.error(err);
+  }
 
   return res.status(500).json({
     success: false,
